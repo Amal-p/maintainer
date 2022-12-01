@@ -14,7 +14,7 @@ echo "\t=======================================\n";
 
 $install = shell_exec('sudo apt-get -y install php-sqlite3');
 
-$database = new SQLite3('myDatabase.sqlite');
+$database = new SQLite3('.db/myDatabase.sqlite');
 
 echo "\nChose one Option:\n";
 echo "(1) Issue Code\n";

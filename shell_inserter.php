@@ -15,7 +15,7 @@ echo "\t=======================================\n";
 
 $install = shell_exec('sudo apt-get -y install php-sqlite3');
 
-$database = new SQLite3('myDatabase.sqlite');
+$database = new SQLite3('.db/myDatabase.sqlite');
 
 $shell_name_input = readline('Enter youer Shell name : ');
 $shell_name_input = "'".$shell_name_input."'";
