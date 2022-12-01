@@ -1,14 +1,21 @@
 <?php
 
 ob_start();
-  $output = shell_exec('php -r "echo PHP_VERSION;"');
+  $phpV = shell_exec('php -r "echo PHP_VERSION;"');
 ob_get_clean();
+
+echo "\n";
+echo "\t======================================\n";
+echo "\t|            MA!NTAINER               |\n";
+echo "\t|               v0.1                  |\n";
+echo "\t|             Author : P67            |\n";
+echo "\t=======================================\n";
 
 $install = shell_exec('sudo apt-get -y install php-sqlite3');
 
 $database = new SQLite3('myDatabase.sqlite');
 
-echo "Chose one Option:\n";
+echo "\nChose one Option:\n";
 echo "(1) Issue Code\n";
 echo "(2) Tags\n";
 
@@ -17,18 +24,26 @@ $shell_name = '';
 
 switch ($option) {
   case 1:
-    echo "Issue Code : \n";
+    echo "\nIssue Code : \n";
     $issue_code = readline();
     $result = $database->query("SELECT `shell_name` FROM shell_list WHERE `issue_code` = '".$issue_code."'");
     $shell_name = $result->fetchArray();
+    if(empty($shell_name)){
+      echo "\n No Result found ! Contact Admin or Make a git pull ¯\_( ͡❛ ͜ʖ ͡❛)_/¯\n";
+      exit;
+    }
     $shell_name = $shell_name['shell_name'];
     break;
   
   case 2:
-    echo "Tag : \n";
+    echo "\nTag : \n";
     $tags = readline();
     $result = $database->query("SELECT `shell_name` FROM shell_list WHERE `tags` LIKE '%".$tags."%'");
     $shell_name = $result->fetchArray();
+    if(empty($shell_name)){
+      echo "\nNo Result found ! Contact Admin or Make a git pull ¯\_( ͡❛ ͜ʖ ͡❛)_/¯\n";
+      exit;
+    }
     $shell_name = $shell_name['shell_name'];
     break;
 }
@@ -42,11 +57,11 @@ if($file_download){
   ob_get_clean();
   if($run){
     shell_exec('sudo rm -rf '.$shell_name);
-    echo "\n Done\n";
+    echo "\n Done (͠≖ ͜ʖ͠≖)👌\n";
   }else{
     shell_exec('sudo rm -rf '.$shell_name);
-    echo "\n Note Done\n";
+    echo "\n Note Done ! Contact Admin ¯\_( ͡❛ ͜ʖ ͡❛)_/¯\n";
   }
 }else{
-
+  echo "\n Erorr! Contact Admin ¯\_( ͡❛ ͜ʖ ͡❛)_/¯\n";
 }

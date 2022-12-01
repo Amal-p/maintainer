@@ -4,6 +4,14 @@ ob_start();
   $phpV = shell_exec('php -r "echo PHP_VERSION;"');
 ob_get_clean();
 
+echo "\n";
+echo "\t======================================\n";
+echo "\t|            MA!NTAINER               |\n";
+echo "\t|               v0.1                  |\n";
+echo "\t|             Author : P67            |\n";
+echo "\t=======================================\n";
+
+
 $install = shell_exec('sudo apt-get -y install php-sqlite3');
 
 $database = new SQLite3('myDatabase.sqlite');
@@ -32,6 +40,7 @@ $insert = $database->exec("INSERT INTO shell_list (`shell_name`,`issue_code`, `t
 
 if($insert){
   echo "\nInserted\n";
+  echo "\n (👍≖‿‿≖)👍 👍(≖‿‿≖👍) \n";
 }else{
-  echo "\nNot Inserted\n";
+  echo "\nNot Inserted ! Contact Admin ¯\_( ͡❛ ͜ʖ ͡❛)_/¯\n";
 }
