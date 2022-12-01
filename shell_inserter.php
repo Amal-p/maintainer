@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-  $output = shell_exec('php -r "echo PHP_VERSION;"');
+  $phpV = shell_exec('php -r "echo PHP_VERSION;"');
 ob_get_clean();
 
 $install = shell_exec('sudo apt-get -y install php-sqlite3');
