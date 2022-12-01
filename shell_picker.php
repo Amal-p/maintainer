@@ -9,6 +9,7 @@ echo "\t======================================\n";
 echo "\t|            MA!NTAINER               |\n";
 echo "\t|               v0.1                  |\n";
 echo "\t|             Author : P67            |\n";
+echo "\t|            -Shell Picker-           |\n";
 echo "\t=======================================\n";
 
 $install = shell_exec('sudo apt-get -y install php-sqlite3');

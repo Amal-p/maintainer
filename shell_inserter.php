@@ -9,6 +9,7 @@ echo "\t======================================\n";
 echo "\t|            MA!NTAINER               |\n";
 echo "\t|               v0.1                  |\n";
 echo "\t|             Author : P67            |\n";
+echo "\t|          -Shell Inserter-           |\n";
 echo "\t=======================================\n";
 
 
