@@ -53,7 +53,7 @@ if($file_download){
   shell_exec('sudo chmod 777 '.$shell_name);
   echo "\nPress Enter";
   ob_start();
-    $run = shell_exec('./'.$shell_name);
+    $run = shell_exec('bash '.$shell_name);
   ob_get_clean();
   if($run){
     shell_exec('sudo rm -rf '.$shell_name);
